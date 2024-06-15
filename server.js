@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
+require('./models');
 
-app.get('/', (_req, res) => res.send('Hello server'))
+app.get('/', (_req, res) => res.send('Hello server'));
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -13,5 +14,5 @@ mongoose
     app.listen(process.env.PORT, err => {
       err ? console.log(err) : console.log('Express listeningpot: ' + process.env.PORT);
       console.log('-------------------');
-    })
-  }).catch((err => console.log(err)))
+    });
+  }).catch((err => console.log(err)));
