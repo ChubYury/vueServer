@@ -3,7 +3,10 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 require('./models');
+const routes = require('./routes')
 
+
+app.use(routes);
 app.get('/', (_req, res) => res.send('Hello server'));
 
 mongoose
