@@ -5,6 +5,8 @@ require('dotenv').config();
 require('./models');
 const routes = require('./routes')
 
+const morgan = require ( 'morgan' )
+app.use(morgan(':remote-addr[:date[clf]]" :method :url HTTP/:http-version" :status :req[content-length] :res[content-length]'));
 
 app.use(routes);
 app.get('/', (_req, res) => res.send('Hello server'));
