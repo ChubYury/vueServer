@@ -1,20 +1,28 @@
-const mainHeader = (req, res, next) => {
+const mainHeader = (_req, res, next) => {
   
-  // res.setHeader(
-  //   'Access-Control-Allow-Origin',
-  //   'http://localhost:8080'
-  // )
-  // res.setHeader(
-  //   'Access-Control-Allow-Headers',
-  //   'Content-Type'
-  // )
   res.set({
     'Access-Control-Allow-Origin': 'http://localhost:8080',
-    'Access-Control-Allow-Methods': 'OPTION,GET,POST,PUT,DELETE',
+    'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,PUT,DELETE',
     'Content-Type': 'application/json'
   });
   
   next();
 }
 
-module.exports = mainHeader
+const postHeader = (_req, res, next) => {
+  res.set(
+    'Access-Control-Allow-Origin',
+    'http://localhost:8080'
+  );
+  res.set(
+    'Access-Control-Allow-Headers',
+    'Content-Type'
+  );
+
+  next();
+} 
+
+module.exports = {
+  mainHeader,
+  postHeader 
+}
