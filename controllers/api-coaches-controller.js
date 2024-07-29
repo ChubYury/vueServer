@@ -11,12 +11,16 @@ const getCoaches = (_req, res) => {
 };
 
 const setCoache = (req, res) => {
-  const {firstName, lastName, areas, description, hourlyRate} = req.body
-  const coache = new Coache(firstName, lastName, areas, description, hourlyRate)
-
-  console.log(coache);
+  const {firstName, lastName, areas, description, hourlyRate} = req.body;
+  const coache = new Coache({firstName, lastName, areas, description, hourlyRate});
+  
+  coache
+    .save()
+    .then((newCoache) => res.status(200).json(newCoache))
+    .catch((err) => console.log(err));
 }
 
 module.exports = {
-  getCoaches
+  getCoaches,
+  setCoache
 };
