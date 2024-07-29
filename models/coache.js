@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const coacheSchema = new mongoose.Schema({
-  firsName: {
+  firstName: {
     type: String,
     required: true
   },
