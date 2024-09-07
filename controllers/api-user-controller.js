@@ -3,7 +3,6 @@ const User = mongoose.model('User');
 const bcryptjs = require('bcryptjs');
 const token = require('../helpers/create-tokens');
 
-
 const getUsers = (_req, res) => {
   
   User
