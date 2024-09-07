@@ -5,7 +5,7 @@ const { getCoaches,
 const {
         mainHeader,
         postHeader,
-      } = require('../helpers/headerHandler.js')
+      } = require('../helpers/headerHandler.js');
 
 router.get('/api/getCoaches', mainHeader, getCoaches);
 

@@ -20,6 +20,10 @@ const coacheSchema = new mongoose.Schema({
   hourlyRate: {
     type: Number,
     required: true
+  },
+  userId: {
+    type: String,
+    required: true
   }
 });
 

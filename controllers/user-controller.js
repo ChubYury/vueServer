@@ -8,9 +8,10 @@ const getUsers = async (_req, res) => {
   User
     .find()
     .exec()
-    .then(users => res.send(users)  )
+    .then(users => res.send(users))
     .catch(err => console.log(err));
 };
+
 const setUser = async (req, res) => {
   try {
     const {email, password} = req.body;
@@ -38,10 +39,7 @@ const setUser = async (req, res) => {
               error: err
             })
           });
-  } catch (error) {
-    console.log(error);
-    res.status(400).json({mess: 'Registration error'})
-  };
+  } catch (error) {res.status(400).json({mess: 'Registration error'})};
 };
 
 const userLogin = async(req, res) => {
@@ -60,12 +58,11 @@ const userLogin = async(req, res) => {
         userId: findUser._id,
         expiresIn: token.options.expiresIn
       });  
-    // res.status(200).json(findUser);
-  } catch (error) {res.status(400).json({mess: 'Authentification error'})}
-}
+  } catch (error) {res.status(400).json({mess: 'Authentification error'})};
+};
 
 module.exports = {
   getUsers,
   setUser,
   userLogin
-}
+};
