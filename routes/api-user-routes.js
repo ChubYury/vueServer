@@ -4,7 +4,7 @@ const {
   getUsers,
   setUser,
   userLogin
- } = require('../controllers/user-controller.js');
+ } = require('../controllers/api-user-controller.js');
 const { postHeader } = require('../helpers/headerHandler.js');
 
 router.get('/api/users', getUsers);
