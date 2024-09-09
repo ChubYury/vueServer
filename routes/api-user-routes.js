@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const { postHeader } = require('../helpers/headerHandler.js');
 const {
   getUsers,
   setUser,
   userLogin
  } = require('../controllers/api-user-controller.js');
-const { postHeader } = require('../helpers/headerHandler.js');
 
 router.get('/api/users', getUsers);
 
