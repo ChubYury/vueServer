@@ -24,7 +24,6 @@ const setUser = async (req, res) => {
     await user
           .save()
           .then(newUser => {
-            console.log('Can set user: ', newUser);
             
             const newToken = token.generate(newUser._id);
             res.status(201).json({
@@ -34,7 +33,7 @@ const setUser = async (req, res) => {
             });
           })
           .catch(err => {
-            res.status(503).json({
+            res.status(400).json({
               mess: 'User not save',
               error: err
             })
