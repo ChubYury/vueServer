@@ -12,7 +12,7 @@ const mainHeader = (_req, res, next) => {
 const postHeader = (_req, res, next) => {
   res.set(
     'Access-Control-Allow-Origin',
-    'http://localhost:8080'
+    'https://vlp-git-deploy-yurys-projects-6b7ac659.vercel.app'
   );
   res.set(
     'Access-Control-Allow-Headers',
@@ -24,7 +24,7 @@ const postHeader = (_req, res, next) => {
 
 const authHeader = (_req, res, next) => {
   res.set({
-    'Access-Control-Allow-Origin': 'http://localhost:8080',
+    'Access-Control-Allow-Origin': 'https://vlp-git-deploy-yurys-projects-6b7ac659.vercel.app',
     'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,PUT,DELETE',
     'Access-Control-Allow-Headers': ['Authorization', 'Content-Type'],
   });
