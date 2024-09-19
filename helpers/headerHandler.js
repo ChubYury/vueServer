@@ -1,7 +1,7 @@
 const mainHeader = (_req, res, next) => {
   
   res.set({
-    'Access-Control-Allow-Origin': 'https://vue-server-tau.vercel.app',
+    'Access-Control-Allow-Origin': 'vlp-umber.vercel.app',
     'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,PUT,DELETE',
     'Content-Type': 'application/json'
   });
@@ -12,7 +12,7 @@ const mainHeader = (_req, res, next) => {
 const postHeader = (_req, res, next) => {
   res.set(
     'Access-Control-Allow-Origin',
-    'https://vue-server-tau.vercel.app'
+    'https://vlp-umber.vercel.app/'
   );
   res.set(
     'Access-Control-Allow-Headers',
@@ -24,7 +24,7 @@ const postHeader = (_req, res, next) => {
 
 const authHeader = (_req, res, next) => {
   res.set({
-    'Access-Control-Allow-Origin': 'https://vue-server-tau.vercel.app/',
+    'Access-Control-Allow-Origin': 'https://vlp-umber.vercel.app/',
     'Access-Control-Allow-Methods': 'OPTIONS,GET,POST,PUT,DELETE',
     'Access-Control-Allow-Headers': ['Authorization', 'Content-Type'],
   });
